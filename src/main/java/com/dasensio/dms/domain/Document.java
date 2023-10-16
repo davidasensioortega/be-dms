@@ -5,6 +5,7 @@ public class Document {
     private String id;
     private String name;
     private String owner;
+    private Long postId;
     private byte[] data;
 
     public String getId() {
@@ -31,6 +32,14 @@ public class Document {
         this.owner = owner;
     }
 
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
+    }
+
     public byte[] getData() {
         return data;
     }
@@ -44,6 +53,7 @@ public class Document {
         private String id;
         private String name;
         private String owner;
+        private Long postId;
         private byte[] data;
 
         private DocumentBuilder() {
@@ -68,6 +78,11 @@ public class Document {
             return this;
         }
 
+        public DocumentBuilder withPostId(Long postId) {
+            this.postId = postId;
+            return this;
+        }
+
         public DocumentBuilder withData(byte[] data) {
             this.data = data;
             return this;
@@ -78,6 +93,7 @@ public class Document {
             document.setId(id);
             document.setName(name);
             document.setOwner(owner);
+            document.setPostId(postId);
             document.setData(data);
             return document;
         }

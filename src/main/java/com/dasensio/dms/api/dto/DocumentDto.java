@@ -4,7 +4,7 @@ public class DocumentDto {
 
     private String id;
     private String name;
-
+    private Long postId;
     private byte[] data;
 
     public String getId() {
@@ -21,6 +21,14 @@ public class DocumentDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 
     public byte[] getData() {

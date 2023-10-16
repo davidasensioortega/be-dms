@@ -14,6 +14,7 @@ public class DocumentEntity {
     private String id;
     private String name;
     private String owner;
+    private Long postId;
     @Lob
     private byte[] data;
 
@@ -41,6 +42,14 @@ public class DocumentEntity {
         this.owner = owner;
     }
 
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
+    }
+
     public byte[] getData() {
         return data;
     }
@@ -54,6 +63,7 @@ public class DocumentEntity {
         private String id;
         private String name;
         private String owner;
+        private Long postId;
         private byte[] data;
 
         private DocumentEntityBuilder() {
@@ -78,6 +88,11 @@ public class DocumentEntity {
             return this;
         }
 
+        public DocumentEntityBuilder withPostId(Long postId) {
+            this.postId = postId;
+            return this;
+        }
+
         public DocumentEntityBuilder withData(byte[] data) {
             this.data = data;
             return this;
@@ -88,6 +103,7 @@ public class DocumentEntity {
             documentEntity.setId(id);
             documentEntity.setName(name);
             documentEntity.setOwner(owner);
+            documentEntity.setPostId(postId);
             documentEntity.setData(data);
             return documentEntity;
         }
